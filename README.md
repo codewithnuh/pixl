@@ -1,8 +1,19 @@
-# img-processor-cli
+# pixl
 
-`img-processor-cli` is a C++-based command-line image processing project focused on fast local image utilities. The current code can load an image, inspect it with `stb_image`, and print basic metadata such as dimensions, channels, format extension, and file size.
+High-speed image tools for the command line.
+
+`pixl` is a C++-based image processing CLI focused on fast local workflows. The current code can load an image, inspect it with `stb_image`, and print basic metadata such as dimensions, channels, format extension, and file size.
 
 This project is in active development. The current implementation is an early foundation, and the roadmap below reflects the planned path from a simple MVP to a more complete image processing toolkit.
+
+## Motivation
+
+- Why should basic image inspection require opening a heavy GUI app?
+- Why should simple tasks like checking dimensions or file size need a full editor?
+- Why should converting or resizing images depend on slow, repetitive manual steps?
+- Why should batch image work be harder than running a single command?
+
+`pixl` is being built to remove that friction and make common image tasks fast, scriptable, and easy to use from the terminal.
 
 ## Current status
 
@@ -19,9 +30,9 @@ The goal is to build a fast and practical image utility that starts with a small
 
 The first milestone is a useful command-line tool with these core features:
 
-- `img-fast info photo.jpg`
-- `img-fast convert input.png output.jpg`
-- `img-fast resize input.jpg output.jpg 800x600`
+- `pixl info photo.jpg`
+- `pixl convert input.png output.jpg`
+- `pixl resize input.jpg output.jpg 800x600`
 - Helpful error handling for missing files, unsupported formats, and overwrite protection
 
 ### MVP success criteria
@@ -64,17 +75,17 @@ The first milestone is a useful command-line tool with these core features:
 ## Proposed CLI shape
 
 ```bash
-img-fast <command> [options] <input> [output]
+pixl <command> [options] <input> [output]
 
-img-fast info image.jpg
-img-fast convert input.png output.jpg
-img-fast resize input.jpg output.jpg 800x600
-img-fast batch convert ./folder/ --to png
-img-fast ico icon.png --sizes 16,32,48
-img-fast zip output.zip image1.jpg image2.png
-img-fast optimize image.jpg --quality 85
-img-fast compare image1.jpg image2.jpg
-img-fast monitor ./watch/ --to jpg
+pixl info image.jpg
+pixl convert input.png output.jpg
+pixl resize input.jpg output.jpg 800x600
+pixl batch convert ./folder/ --to png
+pixl ico icon.png --sizes 16,32,48
+pixl zip output.zip image1.jpg image2.png
+pixl optimize image.jpg --quality 85
+pixl compare image1.jpg image2.jpg
+pixl monitor ./watch/ --to jpg
 ```
 
 ### Global options

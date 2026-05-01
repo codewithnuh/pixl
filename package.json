@@ -1,7 +1,7 @@
 {
-  "name": "img-processor-cli",
+  "name": "pixl",
   "version": "1.0.0",
-  "description": "",
+  "description": "High-speed image tools for the command line.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
